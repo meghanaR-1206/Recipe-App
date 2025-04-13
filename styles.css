@@ -1,0 +1,208 @@
+/* Global styles and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .app-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.navbar .search-bar button {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    background-color: #ff5733;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('2696016.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay opacity */
+    z-index: 0;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Recipes Container Styling */
+.recipes-container {
+    padding-top:100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* This ensures 3 boxes per row */
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    z-index: 20;
+    border: 3px solid white;
+}
+
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    width: 80%;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+.recipe-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.recipe-category, .recipe-area {
+    text-align: center;
+    color: gray;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: red;
+}
+#modal-img{
+    height:100%;
+    width:100%;
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .recipes-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .recipes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .recipes-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .navbar .search-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Background Overlay */
+#background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('2696016.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.9; /* Adjust opacity as needed */
+    z-index: -1; /* Make sure it stays behind the content */
+}
+
+.recipes-container{
+    margin-top:80px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <div id="background-overlay"></div>
+
+    <nav class="navbar">
+        <div class="app-name">Recipe App</div>
+        <div class="search-bar">
+            <input id="search-input" type="text" placeholder="Search recipes...">
+            <button id="searchBtn">Search</button>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-text">
+            <div id="home">
+                <h1>Welcome to Recipe App</h1>
+                <p>Discover delicious recipes and bring your cooking to life!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipes-container" style="display: none;">
+        <div id="loading" class="loading" >Loading...</div>
+    </div>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Recipe Title</h2>
+            <img id="modal-img" src="" alt="Recipe Image">
+            <p><strong>Category:</strong> <span id="modal-category"></span></p>
+            <p><strong>Cuisine:</strong> <span id="modal-area"></span></p>
+            <p><strong>Instructions:</strong> <span id="modal-instructions"></span></p>
+            <p><strong>Ingredients:</strong></p>
+            <ul id="modal-ingredients"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
